@@ -12,8 +12,13 @@ public class StartButton : MonoBehaviour
     #region Private Variables
     #endregion
     #region Components
+    TrafficLights TLManager;
     #endregion
 
+    private void Start()
+    {
+        TLManager = GameObject.FindGameObjectWithTag("TrafficLightManager").GetComponent<TrafficLights>();        
+    }
 
     private void Update()
     {
@@ -22,12 +27,12 @@ public class StartButton : MonoBehaviour
                                  //runs at the same speed everytime
     }
 
-    private void OnGUI()
+    #region Functions
+    public void SetFalse()
     {
-        if (timer < 2)
-        {
-            Debug.Log("timer worked");
-        }
+        TLManager.EMERGENCYSTOP = false;
+        timer = 0;
     }
+    #endregion
 
 }

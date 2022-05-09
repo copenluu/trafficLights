@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - SceneManager
+  - Timing1
+  - SARed
+  - SAYellow
+  - SAGreen
+  - SBRed
+  - SBYellow
+  - SBGreen
+  - TrafficLightManager
   layers:
   - Default
   - TransparentFX
