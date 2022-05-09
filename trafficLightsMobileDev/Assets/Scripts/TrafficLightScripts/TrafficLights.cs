@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TrafficLights : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class TrafficLights : MonoBehaviour
     public bool EMERGENCYSTOP = false;
     #endregion
     #region Inspector Variables
+    [SerializeField] private TextMeshProUGUI SetARed;
+    [SerializeField] private TextMeshProUGUI SetBRed;
+    [SerializeField] private TextMeshProUGUI SetAYellow;
+    [SerializeField] private TextMeshProUGUI SetBYellow;
+    [SerializeField] private TextMeshProUGUI SetAGreen;
+    [SerializeField] private TextMeshProUGUI SetBGreen;
     #endregion
     #region Private Variables
     private SpriteRenderer SARed;
@@ -16,7 +23,6 @@ public class TrafficLights : MonoBehaviour
     private SpriteRenderer SBYellow;
     private SpriteRenderer SAGreen;
     private SpriteRenderer SBGreen;
-
     #endregion
     #region Components
     private StartButton timerCheck;
@@ -83,116 +89,171 @@ public class TrafficLights : MonoBehaviour
 
 
 
-    #region Function
+    #region Functions
 
     public void SetTrue()
     {
         EMERGENCYSTOP = true;
         alarm.Play();
+
+        SARed.color = Color.red;
+        SBRed.color = Color.red;
+        SetARed.text = "ON";
+        SetBRed.text = "ON";
+        SAYellow.color = Color.grey;
+        SBYellow.color = Color.grey;
+        SetAYellow.text = "OFF";
+        SetBYellow.text = "OFF";
+        SAGreen.color = Color.grey;
+        SBGreen.color = Color.grey;
+        SetAGreen.text = "OFF";
+        SetBGreen.text = "OFF";
     }
 
     private void SequenceStep1()
     {
         SARed.color = Color.red;
         SBRed.color = Color.red;
+        SetARed.text = "ON";
+        SetBRed.text = "ON";
 
         SAYellow.color = Color.grey;
         SBYellow.color = Color.grey;
+        SetAYellow.text = "OFF";
+        SetBYellow.text = "OFF";
 
         SAGreen.color = Color.grey;
         SBGreen.color = Color.grey;
-        Debug.Log("1");
+        SetAGreen.text = "OFF";
+        SetBGreen.text = "OFF";
+
+        
     }
 
     private void SequenceStep2()
     {
         SARed.color = Color.red;
         SBRed.color = Color.red;
+        SetARed.text = "ON";
+        SetBRed.text = "ON";
 
         SAYellow.color = Color.grey;
         SBYellow.color= Color.yellow;
+        SetAYellow.text = "OFF";
+        SetBYellow.text = "ON";
 
         SAGreen.color = Color.grey;
         SBGreen.color = Color.grey;
-        Debug.Log("2");
+        SetAGreen.text = "OFF";
+        SetBGreen.text = "OFF";
     }
 
     private void SequenceStep3()
     {
         SARed.color = Color.red;
         SBRed.color = Color.grey;
+        SetARed.text = "ON";
+        SetBRed.text = "OFF";
 
         SAYellow.color = Color.grey;
         SBYellow.color = Color.grey;
+        SetAYellow.text = "OFF";
+        SetBYellow.text = "OFF";
 
         SAGreen.color = Color.grey;
         SBGreen.color = Color.green;
-        Debug.Log("3");
+        SetAGreen.text = "OFF";
+        SetBGreen.text = "ON";
     }
 
     private void SequenceStep4()
     {
         SARed.color = Color.red;
         SBRed.color = Color.grey;
+        SetARed.text = "ON";
+        SetBRed.text = "OFF";
 
         SAYellow.color = Color.grey;
         SBYellow.color = Color.yellow;
+        SetAYellow.text = "OFF";
+        SetBYellow.text = "ON";
 
         SAGreen.color = Color.grey;
         SBGreen.color = Color.grey;
-        Debug.Log("4");
+        SetAGreen.text = "OFF";
+        SetBGreen.text = "OFF";
     }
 
     private void SequenceStep5()
     {
         SARed.color = Color.red;
         SBRed.color = Color.red;
+        SetARed.text = "ON";
+        SetBRed.text = "ON";
 
         SAYellow.color = Color.grey;
         SBYellow.color = Color.grey;
+        SetAYellow.text = "OFF";
+        SetBYellow.text = "OFF";
 
         SAGreen.color = Color.grey;
         SBGreen.color = Color.grey;
-        Debug.Log("5");
+        SetAGreen.text = "OFF";
+        SetBGreen.text = "OFF";
     }
 
     private void SequenceStep6()
     {
         SARed.color = Color.red;
         SBRed.color = Color.red;
+        SetARed.text = "ON";
+        SetBRed.text = "ON";
 
         SAYellow.color = Color.yellow;
         SBYellow.color = Color.grey;
+        SetAYellow.text = "ON";
+        SetBYellow.text = "OFF";
 
         SAGreen.color = Color.grey;
         SBGreen.color = Color.grey;
-        Debug.Log("6");
+        SetAGreen.text = "OFF";
+        SetBGreen.text = "OFF";
     }
 
     private void SequenceStep7()
     {
         SARed.color = Color.grey;
         SBRed.color = Color.red;
+        SetARed.text = "OFF";
+        SetBRed.text = "ON";
 
         SAYellow.color = Color.grey;
         SBYellow.color = Color.grey;
+        SetAYellow.text = "OFF";
+        SetBYellow.text = "OFF";
 
         SAGreen.color = Color.green;
         SBGreen.color = Color.grey;
-        Debug.Log("7");
+        SetAGreen.text = "ON";
+        SetBGreen.text = "OFF";
     }
 
     private void SequenceStep8()
     {
         SARed.color = Color.grey;
         SBRed.color = Color.red;
+        SetARed.text = "OFF";
+        SetBRed.text = "ON";
 
         SAYellow.color = Color.yellow;
         SBYellow.color = Color.grey;
+        SetAYellow.text = "ON";
+        SetBYellow.text = "OFF";
 
         SAGreen.color = Color.grey;
         SBGreen.color = Color.grey;
-        Debug.Log("8");
+        SetAGreen.text = "OFF";
+        SetBGreen.text = "OFF";
     }
 
 
