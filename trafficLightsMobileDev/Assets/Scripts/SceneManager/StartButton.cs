@@ -6,6 +6,7 @@ public class StartButton : MonoBehaviour
 {
     #region Public Variables
     public float timer; //Sets up a private float called "timer"
+    public float constTimer;
     #endregion
     #region Inspector Variables
     #endregion
@@ -25,6 +26,7 @@ public class StartButton : MonoBehaviour
         timer += Time.deltaTime; //Updates timer variable every frame equal to deltaTime
                                  //DeltaTime is a standardiser that ensures the timer
                                  //runs at the same speed everytime
+        constTimer += Time.deltaTime;
     }
 
     #region Functions
@@ -32,6 +34,7 @@ public class StartButton : MonoBehaviour
     {
         TLManager.EMERGENCYSTOP = false;
         timer = 0;
+        constTimer = 0;
     }
     #endregion
 

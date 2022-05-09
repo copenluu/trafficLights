@@ -96,6 +96,8 @@ public class TrafficLights : MonoBehaviour
         EMERGENCYSTOP = true;
         alarm.Play();
 
+        timerCheck.timer = 0;
+
         SARed.color = Color.red;
         SBRed.color = Color.red;
         SetARed.text = "ON";
