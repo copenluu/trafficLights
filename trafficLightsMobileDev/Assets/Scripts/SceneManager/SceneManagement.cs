@@ -8,5 +8,5 @@ public class SceneManagement : MonoBehaviour
     public void ChangeScene(string name)
     {
         SceneManager.LoadScene(name);
-    }
+    } //changes the scene based on the scene name that the user writes on the function in unity
 }

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RF8MC0VS6PR",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 18689,
+        "processId": 18876,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -18,6 +18,12 @@
             "deviceId": "RF8MC0VS6PR",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 18689,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8MC0VS6PR",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 18876,
             "exited": false
         }
     ],

@@ -14,6 +14,8 @@ public class SequenceTimer : MonoBehaviour
     public int step7TL;
     public int step8TL;
     public int resetTimer;
+    //establishes the timers as public variables and ints 
+    //so it can be accessed from other scripts 
 
     private void Start()
     {
@@ -25,5 +27,5 @@ public class SequenceTimer : MonoBehaviour
         step6TL += step5TL;
         step7TL += step6TL;
         step8TL += step7TL;
-    }
+    } //adds the values together for the user
 }

@@ -6,7 +6,7 @@ using TMPro;
 public class TrafficLights : MonoBehaviour
 {
     #region Public Variables
-    public bool EMERGENCYSTOP = false;
+    public bool EMERGENCYSTOP = false; //sets emergency stop to public so other scripts can access it and sets to false by default
     #endregion
     #region Inspector Variables
     [SerializeField] private TextMeshProUGUI SetARed;
@@ -14,7 +14,7 @@ public class TrafficLights : MonoBehaviour
     [SerializeField] private TextMeshProUGUI SetAYellow;
     [SerializeField] private TextMeshProUGUI SetBYellow;
     [SerializeField] private TextMeshProUGUI SetAGreen;
-    [SerializeField] private TextMeshProUGUI SetBGreen;
+    [SerializeField] private TextMeshProUGUI SetBGreen; //the text elements for accessibility can be changed by being assigned in inspector
     #endregion
     #region Private Variables
     private SpriteRenderer SARed;
@@ -22,12 +22,12 @@ public class TrafficLights : MonoBehaviour
     private SpriteRenderer SAYellow;
     private SpriteRenderer SBYellow;
     private SpriteRenderer SAGreen;
-    private SpriteRenderer SBGreen;
+    private SpriteRenderer SBGreen; //calls the "sprite" part of the traffic lights so I can change the colour
     #endregion
     #region Components
-    private StartButton timerCheck;
-    private SequenceTimer timerChanges;
-    private AudioSource alarm;
+    private StartButton timerCheck; //
+    private SequenceTimer timerChanges; //calls from other scripts so they can be used here
+    private AudioSource alarm; //component to play audio
     #endregion
 
     private void Start()
@@ -40,7 +40,7 @@ public class TrafficLights : MonoBehaviour
         SBGreen = GameObject.FindGameObjectWithTag("SBGreen").GetComponent<SpriteRenderer>(); //I moved the script from the colour to the object its inside, so I am re-establishing the colour changing option
         timerCheck = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<StartButton>(); //Gets the script so it can access the timer to check
         timerChanges = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SequenceTimer>(); //Gets the script so it can access the timer sequence steps
-        alarm = GetComponent<AudioSource>();
+        alarm = GetComponent<AudioSource>(); //lets me play audio as it gets audiosource from current game object
     }
 
     private void Update()
@@ -63,7 +63,7 @@ public class TrafficLights : MonoBehaviour
             {
                 SequenceStep4();
             }
-            if (timerCheck.timer > timerChanges.step4TL)
+            if (timerCheck.timer > timerChanges.step4TL) //changes traffic lights depending on what the value of "timer" is, and if its larger than the next step 
             {
                 SequenceStep5();
             }
@@ -81,7 +81,7 @@ public class TrafficLights : MonoBehaviour
             }
             if (timerCheck.timer > timerChanges.step8TL)
             {
-                timerCheck.timer = 0;
+                timerCheck.timer = 0; //resets to 0 to start loop all over again
             }
         }
         
@@ -91,10 +91,10 @@ public class TrafficLights : MonoBehaviour
 
     #region Functions
 
-    public void SetTrue()
+    public void SetTrue() //function to set emergency stop true. assigned to "emergency stop" button
     {
         EMERGENCYSTOP = true;
-        alarm.Play();
+        alarm.Play(); //plays alarm audio clip component, aka alarm noise
 
         timerCheck.timer = 0;
 
@@ -112,7 +112,7 @@ public class TrafficLights : MonoBehaviour
         SetBGreen.text = "OFF";
     }
 
-    private void SequenceStep1()
+    private void SequenceStep1() //a lot of repetition. runs through sequence and changes to what is needed for that sequence.
     {
         SARed.color = Color.red;
         SBRed.color = Color.red;
