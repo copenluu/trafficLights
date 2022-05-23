@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "RF8MC0VS6PR",
+    "m_SelectedDeviceId": "3092SH1001044316",
     "m_SelectedPackage": {
-        "deviceId": "RF8MC0VS6PR",
+        "deviceId": "3092SH1001044316",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 18876,
+        "processId": 11109,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -24,6 +24,12 @@
             "deviceId": "RF8MC0VS6PR",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 18876,
+            "exited": false
+        },
+        {
+            "deviceId": "3092SH1001044316",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 11109,
             "exited": false
         }
     ],
