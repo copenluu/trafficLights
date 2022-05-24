@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class TrafficLights : MonoBehaviour
 {
     #region Public Variables
-    public bool EMERGENCYSTOP = false; //sets emergency stop to public so other scripts can access it and sets to false by default
+    public bool emergencyStop = false; //sets emergency stop to public so other scripts can access it and sets to false by default
     #endregion
     #region Inspector Variables
     [SerializeField] private TextMeshProUGUI SetARed;
@@ -15,6 +16,8 @@ public class TrafficLights : MonoBehaviour
     [SerializeField] private TextMeshProUGUI SetBYellow;
     [SerializeField] private TextMeshProUGUI SetAGreen;
     [SerializeField] private TextMeshProUGUI SetBGreen; //the text elements for accessibility can be changed by being assigned in inspector
+    [SerializeField] private Button stopButton; //
+    [SerializeField] private Button startButton; //assigns stop and start button in inspector
     #endregion
     #region Private Variables
     private SpriteRenderer SARed;
@@ -45,7 +48,7 @@ public class TrafficLights : MonoBehaviour
 
     private void Update()
     {
-        if (!EMERGENCYSTOP)
+        if (!emergencyStop)
         {
             if (timerCheck.timer > timerChanges.step0TL)
             {
@@ -93,7 +96,7 @@ public class TrafficLights : MonoBehaviour
 
     public void SetTrue() //function to set emergency stop true. assigned to "emergency stop" button
     {
-        EMERGENCYSTOP = true;
+        emergencyStop = true; //changed to camel naming convention
         alarm.Play(); //plays alarm audio clip component, aka alarm noise
 
         timerCheck.timer = 0;
@@ -110,6 +113,9 @@ public class TrafficLights : MonoBehaviour
         SBGreen.color = Color.grey;
         SetAGreen.text = "OFF";
         SetBGreen.text = "OFF";
+
+        stopButton.interactable = false; //once this function is called, the stop button stops being interactable
+        startButton.interactable = true; //the start button is now interactable again
     }
 
     private void SequenceStep1() //a lot of repetition. runs through sequence and changes to what is needed for that sequence.

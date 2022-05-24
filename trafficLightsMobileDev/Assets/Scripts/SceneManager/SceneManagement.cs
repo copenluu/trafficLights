@@ -9,4 +9,6 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene(name);
     } //changes the scene based on the scene name that the user writes on the function in unity
+
+
 }

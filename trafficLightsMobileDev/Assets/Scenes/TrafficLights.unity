@@ -697,6 +697,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   constTimer: 0
+  startButton: {fileID: 1603015751}
+  stopButton: {fileID: 1685538494}
 --- !u!4 &446053117
 Transform:
   m_ObjectHideFlags: 0
@@ -1305,7 +1307,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 17, y: -166}
-  m_SizeDelta: {x: 400, y: 50}
+  m_SizeDelta: {x: 750, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745541449
 MonoBehaviour:
@@ -1327,7 +1329,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Active for 0 seconds
+  m_text: Lights have been active for 0 seconds
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1361,7 +1363,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1655,13 +1657,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd45e38d87f4da54e8f295105a50d425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EMERGENCYSTOP: 0
+  emergencyStop: 0
   SetARed: {fileID: 1901412013}
   SetBRed: {fileID: 2007827142}
   SetAYellow: {fileID: 1437237882}
   SetBYellow: {fileID: 28275267}
   SetAGreen: {fileID: 1363542390}
   SetBGreen: {fileID: 685777688}
+  stopButton: {fileID: 1685538494}
+  startButton: {fileID: 1603015751}
 --- !u!82 &1334503307
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2354,7 +2358,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
     m_PressedColor: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
     m_SelectedColor: {r: 0, g: 0, b: 0, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.78431374}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2633,7 +2637,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 1}
     m_PressedColor: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
     m_SelectedColor: {r: 0, g: 0, b: 0, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.78431374}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2647,7 +2651,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1685538495}
   m_OnClick:
     m_PersistentCalls:

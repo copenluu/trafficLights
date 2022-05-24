@@ -15,11 +15,14 @@ public class UITimer : MonoBehaviour
     #endregion
     #region Components
     private StartButton timerGet; //calls start button script so it can be used
+    TrafficLights TLManager;
     #endregion
 
     private void Start()
     {
         timerGet = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<StartButton>(); //loads start button script from scene manager and shortens to "timerGet"
+        TLManager = GetComponent<TrafficLights>();
+    
     }
 
     private void FixedUpdate()
@@ -31,8 +34,15 @@ public class UITimer : MonoBehaviour
     private void UpdateTimer()
     {
         timeKeep = timerGet.constTimer;
-        int timeKeepInt = Mathf.RoundToInt(timeKeep);
-        timer.text = "Active for " + timeKeepInt.ToString() + " seconds";
+        int timeKeepInt = Mathf.FloorToInt(timeKeep);
+        timer.text = "Lights have been active for " + timeKeepInt.ToString() + " seconds";
+
+        if (TLManager.emergencyStop == true)
+        {
+            timer.text = "Lights were active for " + timeKeepInt.ToString() + " seconds";
+        }
+
+
     } //rounds the value of timeKeep to an integer and updates text with new number everytime it changes
     #endregion
 
